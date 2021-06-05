@@ -24,7 +24,7 @@ class Header extends StatelessWidget {
             SizedBox(width: 20),
             GestureDetector(
                 onTap: () {},
-                child: Icon(Icons.supervised_user_circle_outlined,
+                child: Icon(Icons.account_circle_outlined,
                     color: Color(0x503c3c3c), size: 30))
           ],
         )
