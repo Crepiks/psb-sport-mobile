@@ -12,14 +12,19 @@ class EventsList extends StatelessWidget {
         child: ListView.builder(
             itemCount: events.length,
             itemBuilder: (context, index) {
-              return Container(
-                padding: EdgeInsets.symmetric(vertical: 15),
-                child: EventCard(
-                    title: events[index].title,
-                    description: events[index].description,
-                    dateTime: events[index].date,
-                    duration: events[index].duration,
-                    imagePath: events[index].imagePath),
+              return GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/event');
+                },
+                              child: Container(
+                  padding: EdgeInsets.symmetric(vertical: 15),
+                  child: EventCard(
+                      title: events[index].title,
+                      description: events[index].description,
+                      dateTime: events[index].date,
+                      duration: events[index].duration,
+                      imagePath: events[index].imagePath),
+                ),
               );
             }));
   }

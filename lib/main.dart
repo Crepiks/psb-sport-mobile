@@ -11,7 +11,7 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: "ПСБ Спорт", initialRoute: '/intro', routes: {
+    return MaterialApp(title: "ПСБ Спорт", initialRoute: '/', routes: {
       '/': (context) => EventsPage(),
       '/intro': (context) => Intro(),
       '/event': (context) => EventPage(),
