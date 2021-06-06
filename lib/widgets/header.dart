@@ -23,7 +23,9 @@ class Header extends StatelessWidget {
                     color: Color(0x503c3c3c), size: 30)),
             SizedBox(width: 20),
             GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
                 child: Icon(Icons.account_circle_outlined,
                     color: Color(0x503c3c3c), size: 30))
           ],
