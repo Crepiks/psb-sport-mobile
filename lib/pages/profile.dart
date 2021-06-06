@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'package:psb_sport/widgets/profile_events.dart';
 
 class Profile extends StatelessWidget {
   @override
@@ -17,51 +18,61 @@ class Profile extends StatelessWidget {
               Navigator.pop(context);
             },
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Icon(Icons.arrow_back_rounded,
-                    size: 26, color: Color(0xFF2B2D83)),
-                SizedBox(width: 5),
-                Text("Назад",
-                    style: TextStyle(fontSize: 12, color: Color(0xFF2B2D83)))
-              ],
-            ),
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(Icons.arrow_back_rounded,
+                            size: 26, color: Color(0xFF2B2D83)),
+                        SizedBox(width: 8),
+                        Text("Назад",
+                            style: TextStyle(
+                                fontSize: 16, color: Color(0xFF2B2D83)))
+                      ]),
+                  GestureDetector(
+                      child: Icon(Icons.shopping_cart_outlined,
+                          size: 30, color: Color(0xff2B2D83)))
+                ]),
           ),
           Column(
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "http://pngimg.com/uploads/baseball/baseball_PNG18978.png")),
+              Container(
+                height: 150,
+                width: 150,
+                child: CircleAvatar(
+                    backgroundColor: Color(0x902B2D83),
+                    backgroundImage: NetworkImage(
+                        "http://pngimg.com/uploads/baseball/baseball_PNG18978.png")),
+              ),
+              SizedBox(height: 10),
               Text("Кажимухан Азат",
                   style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 28,
                       color: Color(0xFF3c3c3c),
                       fontWeight: FontWeight.bold)),
               SizedBox(height: 5),
-              Text("IOS разработчик",
+              Text("Команда «‎Бананы»",
                   style: TextStyle(
-                      fontSize: 24,
-                      color: Color(0xFF3c3c3c),
+                      fontSize: 20,
+                      color: Color(0x803c3c3c),
                       fontWeight: FontWeight.w500)),
-              SizedBox(height: 15),
+              SizedBox(height: 30),
               Text("Бонусов: 340",
                   style: TextStyle(
-                      fontSize: 26,
+                      fontSize: 22,
                       color: Color(0xFFE95516),
-                      fontWeight: FontWeight.w600)),
+                      fontWeight: FontWeight.bold)),
             ],
           ),
           SizedBox(height: 30),
-          Container(
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                  color: Color(0x502B2D83),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Text("Мероприятия")),
+          ProfileEvents(),
         ],
       ),
     )));
